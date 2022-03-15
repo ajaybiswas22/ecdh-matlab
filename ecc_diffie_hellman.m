@@ -1,10 +1,12 @@
 % ecc diffie_hellman
 clear all
 
-q = 1097879;
+q = 1097879;	% large prime number
 a = 2;
 b = 3;
-n = 30;         
+n = 30;       	
+% Set a high value of n, make sure the number of rows
+% in Eq_a_b should be greater that n          
 
 Eq_a_b = generate_elliptic_curve(a,b,q,0,10000);
 G_x = Eq_a_b(n,1);
@@ -28,7 +30,9 @@ n_fcm = 10;
 p_fcm_x = G_x;
 p_fcm_y = G_y;
 
-% multiply n_device times
+
+
+% multiply n_fcm times
 for i = 2:n_fcm
     P2 = elliptic_curve_add(G_x,G_y,p_fcm_x,p_fcm_y,a,b,q);
     p_fcm_x = P2(1);
@@ -51,7 +55,6 @@ end
 
 % bob
 % K
-
 k2_x = p_device_x;
 k2_y = p_device_y;
 
@@ -61,9 +64,7 @@ for i = 2:n_fcm
     k2_y = P4(2);
 end
 
-
-
-
-
-
-
+fprintf('a=%s, b=%s, q=%s, n=%s, n_device=%s, n_fcm=%s\n', ...
+    num2str(a),num2str(b),num2str(q),num2str(n),num2str(n_device),num2str(n_fcm));
+fprintf('Shared key of Alice: (%s,%s)\n',num2str(k1_x),num2str(k1_y));
+fprintf('Shared key of bob: (%s,%s)\n',num2str(k2_x),num2str(k2_y));
