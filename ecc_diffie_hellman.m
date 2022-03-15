@@ -1,14 +1,14 @@
 % ecc diffie_hellman
 clear all
 
-q = 1097879;	% large prime number
+q = 102070201;	% large prime number
 a = 2733342;
 b = 3401342;
 n = 1043;       	
 % Set a high value of n, make sure the number of rows
 % in Eq_a_b should be greater that n          
 
-Eq_a_b = generate_elliptic_curve(a,b,q,0,1000000);
+Eq_a_b = generate_elliptic_curve(a,b,q,0,10000000);
 G_x = Eq_a_b(n,1);
 G_y = Eq_a_b(n,2);
 
