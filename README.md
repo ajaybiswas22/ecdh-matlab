@@ -18,3 +18,9 @@ Implementation of Elliptic curve Diffie-Hellman in MATLAB
 Kefa Rabah , 2005. Implementation of Elliptic Curve Diffie-Hellman and EC Encryption Schemes. Information Technology Journal, 4: 132-139.
 
 
+https://andrea.corbellini.name/ecc/interactive/modk-add.html
+
+https://crypto.stanford.edu/pbc/notes/elliptic/explicit.html
+
+https://www.brainkart.com/article/Elliptic-Curve-Arithmetic_8442/
+
